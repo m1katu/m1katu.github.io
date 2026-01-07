@@ -1,0 +1,9 @@
+{
+    "Name" : "Yogri",
+    "Calories": 56.0,
+    "Protein" : 20.0,
+    "Carbs" : 2.0,
+    "Fats" : 2.0,
+    "isVegetarian" : true,
+    "isVegan" : false
+}
