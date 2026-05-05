@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="mikas-conveniences.page.gd">
+    <meta property="og:title" content="Coordinates Generator for Minecraft">
+    <meta property="og:description" content="A simple coordinates generator for Minecraft. Generate random coordinates within a specified range from your current position.">
+    <title>CoordinatesGenerator</title>
+    <link rel="img" href="pics/bg.jpg" as="image">
+    <link rel="stylesheet" href="coordStyle.css">
+</head>
+    <script>
+        function generateCoordinates() {
+            let allowedOffset = document.getElementById("allowedOffset").value;
+            let oldX = document.getElementById("xCoord").value;
+            let oldZ = document.getElementById("zCoord").value;
+
+            let newX = Math.floor(Math.random() * (2 * allowedOffset + 1)) - allowedOffset + parseInt(oldX);
+            let newZ = Math.floor(Math.random() * (2 * allowedOffset + 1)) - allowedOffset + parseInt(oldZ);
+            
+            document.getElementById("generatedCoords").innerHTML = `X: ${newX}, Z: ${newZ}`;
+        }
+    </script>
+<body>
+<header>
+    <h1>Coordinates Generator for Minecraft</h1>
+</header>
+<main>
+    <div class="card">
+        <section name="CoordinateGenerator" id="generator">
+        <h2>CoordinatesGenerator</h2>
+        <p>This is a generator to generate (somewhat) random coordinates.
+            Just enter your position and preferred settings!
+        </p>
+        <p>The coordinates you want to start from:</p>
+        <ul class="flex">
+            <li>
+                <label for="xCoord">X Coordinate:</label>
+                <input type="number" id="xCoord" > 
+            </li>
+            <li>
+            <label for="zCoord">Z Coordinate:</label>
+            <input type="number" id="zCoord" >
+            </li>
+        </ul>
+          
+        <br>  
+
+        <label for="allowedOffset">How far away may the generated coordinates be?</label>
+        <br> 
+        <input type="number" id="allowedOffset">
+        <button onclick="generateCoordinates()" id="generateBtn" class="glow-on-hover">Generate Coordinates</button>    
+    
+        <div id="resultArea">
+            <h2>Generated Coordinates:</h2>
+            <p id="generatedCoords">Your coordinates will be displayed here! </p>
+        </div>
+        </section>
+        <hr>
+        <section name="Socials" id="socials">
+            <div id="card_footer">
+                <p class="center">Socials:</p>
+                <ul class="flex">
+                    <li><a name="Link to Instagram" href="https://www.instagram.com/specklelight.waca/"><img src="pics/instagram-svgrepo-com.svg" class="icon" alt="Instagram Icon"></a></li>
+                    <!--<li><a href="https://www.twitter.com"><img src="pics/twitter.svg" class="icon" alt="Twitter Icon"></a></li>-->
+                    <li><a name="Link to GitHub" href="https://www.github.com"><img src="pics/github.svg" class="icon" alt="GitHub Icon"></a></li>
+                    <li><a name="Link to YouTube"href="https://www.youtube.com/channel/UCuG9LJKora2Snb-oCwPDJ3g"><img src="pics/youtube.svg" class="icon" alt="YouUbe Icon"></a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</main>
+<footer>
+    <p class="center">© 2025 by mikatu. All rights reserved.</p>
+</footer>
+</body>
+</html>
